@@ -45,3 +45,13 @@ class Schedule(models.Model):
     courses_list= models.ForeignKey(Courses_list, on_delete=models.CASCADE)
     start_time= models.TimeField(auto_now=False)
     end_time = models.TimeField(auto_now=False)
+
+
+class KangMark(models.Model):
+    user= models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=10)
+    url= models.URLField(max_length=10)
+    img = models.ImageField(upload_to='images/')
+    price = models.IntegerField()
+    category= models.ForeignKey(Categories, on_delete=models.CASCADE)
+   

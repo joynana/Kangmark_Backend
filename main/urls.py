@@ -22,7 +22,11 @@ urlpatterns = [
     # path('', views.data),
     path('users/', views.user_list),
     path('me/', views.me),
-    path('courses/', views.courses),
-    path('schedule/courses', views.schedule)
+    path('courses/', views.courses), #메인페이지 강의 보여주기
+    path('schedule/courses/', views.schedule), #스케쥴 페이지
+    path('duration_time/', views.duration_time), #이용현황 페이지  
+    path('duration_time/subjects/', views.subjects), 
+    path('courses/due_date/', views.due_date), 
+    path('kangmark/', views.kangmark) 
 
 ]
