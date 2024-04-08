@@ -11,7 +11,7 @@ class User(models.Model):
     age = models.IntegerField()
 
     def __str__(self):
-            return self.name
+        return self.name
     
 
 class Courses(models.Model):
@@ -29,6 +29,9 @@ class Categories(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     categories_name = models.CharField(max_length=10)
 
+    def __str__(self):
+        return str(self.categories_name)
+
 
 #수강내역 #MTON 필드로 들어가야 하는지 궁금하다?
 class Courses_list(models.Model):
@@ -37,6 +40,7 @@ class Courses_list(models.Model):
     category= models.ForeignKey(Categories, on_delete=models.CASCADE)
     course= models.ForeignKey(Courses, on_delete=models.CASCADE)
     due_date = models.DateTimeField(auto_now=False)
+
 
 
 class Schedule(models.Model):
