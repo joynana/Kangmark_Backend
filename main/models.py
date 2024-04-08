@@ -4,7 +4,7 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length=10)
-    email = models.EmailField(max_length=10)
+    email = models.EmailField(max_length=100)
     password = models.CharField(max_length=10)
     telephone_num = models.IntegerField()
     school = models.CharField(max_length=10)
@@ -16,7 +16,7 @@ class User(models.Model):
 
 class Courses(models.Model):
     name = models.CharField(max_length=10)
-    url= models.URLField(max_length=10)
+    url= models.URLField(max_length=100)
     img = models.ImageField(upload_to='images/')
     subject = models.CharField(max_length=10)
     price = models.IntegerField()
@@ -50,7 +50,7 @@ class Schedule(models.Model):
 class KangMark(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=10)
-    url= models.URLField(max_length=10)
+    url= models.URLField(max_length=100)
     img = models.ImageField(upload_to='images/')
     price = models.IntegerField()
     category= models.ForeignKey(Categories, on_delete=models.CASCADE)
